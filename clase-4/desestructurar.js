@@ -26,3 +26,4 @@ const usuario = {
 };
 const { info: { nombre2, edad } } = usuario;
 console.log(nombre); // Luis
+
