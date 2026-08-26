@@ -1,0 +1,1 @@
+console.log(`Resultado de 2 + 2 = ${2 + 2}`); // Resultado de 2 + 2 = 4

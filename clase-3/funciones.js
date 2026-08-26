@@ -10,9 +10,10 @@ const multiplicacion = (a, b) => {
     return a * b;
 }
 
-console.log(suma(2, 3));
+console.log(suma(5, 3));
 console.log(resta(5, 3));
 console.log(multiplicacion(2, 3));
+multiplicacion(10,10);
 
 function calculadora (a, b, operacion) {
     return operacion(a, b);
