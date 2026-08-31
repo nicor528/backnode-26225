@@ -103,7 +103,7 @@ function recorrerAutos (autos = [],  color_if = false) {
     }
 }
 
-recorrerAutos( autos,"azul");
+recorrerAutos(autos,"azul");
 
 class Auto {
     constructor(marca, modelo, year, color){
