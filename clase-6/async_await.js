@@ -23,4 +23,4 @@ async function executeAsyncTask () {
     }
 }
 executeAsyncTask();
-console.log("Continua la ejecución")
+console.log("Continua la ejecución");
