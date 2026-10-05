@@ -18,6 +18,7 @@ async function eliminarProducto(producto){
         const response = await fetch(`https://fakestoreapi.com/${producto}`,{
             method: "DELETE"
         })
+        console.log(response.status)
         const data = await response.json()
         return data
     }catch(error){
