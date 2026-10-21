@@ -7,16 +7,16 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get("/JSON", (req, res) => {
-    res.status(200).json({
-        data: [{id: 1, email: "test@gmail"},{id: 2, email: "test2@gmail"},{id: 3, email: "test3@gmail"}],
-        message: "Usuarios enviados"
-    })
-})
+app.get('/', (req, res) => {
+  res.send('Hola desde Express con middlewares!');
+});
 
-app.get("/HTML", (req, res) => {
-    res.status(200).send("<h1> Bienvenido! </h1>")
+app.get("/ping", (req, res, next) => {
+    res.status(200).send("pong")
+    //console.log("test")
+    //next()
 })
+//
 
 app.use((req, res, next) => {
     //console.log("test 2")
