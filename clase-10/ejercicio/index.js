@@ -41,7 +41,7 @@ app.use("/users", (req, res) => {
         const users_query = users.filter(user => user.name == name && user.category == category);
             if(users_query.length > 0){
                 res.json({
-                    message: "usuario encontrado con exito",
+                    message: "usuarios encontrados con exito",
                     data: users_query
                 })
             }else{

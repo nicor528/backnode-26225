@@ -1,4 +1,5 @@
 import express from "express";
+import productsRoutes from './src/rutas/products.routes.js';
 
 const app = express();
 
@@ -30,6 +31,8 @@ app.get('/item/:id', (req, res) => {
   const itemId = req.params.id;
   res.send(`Devolviendo el ítem con ID: ${itemId}`);
 });
+
+app.use('/api', productsRoutes);
 
 app.get('/items', (req, res) => {
   const category = req.query.category;
