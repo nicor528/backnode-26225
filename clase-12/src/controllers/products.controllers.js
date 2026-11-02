@@ -6,7 +6,7 @@ export async function getAllProducts(req, res) {
     try{
         const products = await getAllProductsService(category);
         if(products.length > 0){
-            res.send({
+            res.status(200).send({
                 message: "Productos encontrados",
                 data: products
             })
@@ -16,6 +16,7 @@ export async function getAllProducts(req, res) {
             })
         }
     }catch(error){
+        console.log(error)
         res.status(500).send({
             message: "Error interno"
         })
@@ -27,6 +28,7 @@ export async function getProduct(req, res) {
     if(id){
         try{
             const product = await getProductService(id);
+            console.log(product)
             if(product){
                 res.send({
                     message: "Producto encontrado",
@@ -38,6 +40,7 @@ export async function getProduct(req, res) {
                 })
             }
         }catch(error){
+            console.log("ERROR INTERNO", error)
             res.status(500).send({
                 message: "Error interno"
             })

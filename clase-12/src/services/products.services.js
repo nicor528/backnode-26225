@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
   {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -239,9 +239,13 @@ const products = [
       "count": 145
     }
   }
-]
+]*/
+
+import { getProducts } from "../models/products.models.js";
 
 export const getAllProductsService = async (category) => {
+    const products = await getProducts();
+    console.log(products)
     if(category){
         const products_q = await products.filter(product => product.category == category);
         return products_q
@@ -251,6 +255,7 @@ export const getAllProductsService = async (category) => {
 }
 
 export const getProductService = async (id) => {
-    const product = products.find(product => product.id == id)
-    return product
+  const products = await getProducts();
+  const product = products.find(product => product.id == id)
+  return product
 }
