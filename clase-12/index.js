@@ -4,6 +4,8 @@ import rutasProductos from "./src/routes/products.routes.js";
 
 const app = express();
 
+console.log("Test nodemon")
+
 app.use(cors());
 
 app.use((req, res, next) => {

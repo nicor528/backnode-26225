@@ -241,21 +241,20 @@
   }
 ]*/
 
-import { getProducts } from "../models/products.models.js";
+import { buscarPorConsulta, obtenerPorId, obtenerProductos } from "../models/products.models.js";
 
 export const getAllProductsService = async (category) => {
-    const products = await getProducts();
-    console.log(products)
     if(category){
-        const products_q = await products.filter(product => product.category == category);
+        const products_q = await buscarPorConsulta(category)
         return products_q
     }else{
-        return products
+      const products = await obtenerProductos();
+      console.log(products)
+      return products
     }
 }
 
 export const getProductService = async (id) => {
-  const products = await getProducts();
-  const product = products.find(product => product.id == id)
+  const product = await obtenerPorId(id)
   return product
 }
