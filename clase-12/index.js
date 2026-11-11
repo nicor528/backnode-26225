@@ -6,7 +6,9 @@ const app = express();
 
 console.log("Test nodemon")
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173"
+}));
 
 app.use((req, res, next) => {
     console.log(`Datos recibidos: ${req.method} ${req.url}`);
@@ -18,7 +20,7 @@ app.use("/api", rutasProductos)
 app.use((req, res, next) => {
     //console.log("test 2")
     res.status(404).json({
-        error : "404 ruta no encontrada",
+        error: "404 ruta no encontrada",
         mensaje: `el recurso ${req.url} no existe`
     })
 })
