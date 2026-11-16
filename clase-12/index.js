@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import rutasProductos from "./src/routes/products.routes.js";
+import authRouter from './src/routes/auth.routes.js';
+import bodyParser from "body-parser";
 
 const app = express();
 
@@ -10,12 +12,15 @@ app.use(cors({
     origin: "http://localhost:5173"
 }));
 
+app.use(bodyParser.json());
+
 app.use((req, res, next) => {
     console.log(`Datos recibidos: ${req.method} ${req.url}`);
     next();
 })
 
-app.use("/api", rutasProductos)
+app.use('/auth', authRouter);
+app.use("/api", rutasProductos);
 
 app.use((req, res, next) => {
     //console.log("test 2")
